@@ -45,7 +45,7 @@ public class ReqressPojoTest {
 //                .then().log().all()
 //                .extract().body().jsonPath().getList("data", UserData.class);
 
-        //Способ круче
+        //С помощью stream api:
         users.forEach(x-> Assert.assertTrue(x.getAvatar().contains(x.getId().toString())));
         Assert.assertTrue(users.stream().allMatch(x-> x.getEmail().endsWith("@reqres.in")));
 
